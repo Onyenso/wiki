@@ -1,0 +1,48 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}Create{% endblock %}
+
+{% block body %}
+
+    {% if page %}
+
+        <h1>Edit Wiki Entry</h1>
+
+        <form action="{% url 'wiki:edit' entry='{{ title }}' %}" method="post">
+            {% csrf_token %}
+            <div class="m-2 form-group col-5">
+                <input type="text" name="title" class="form-control" placeholder="Title" value="{{ title }}" required>
+            </div>
+            <div class="m-2 form-group col-8">
+                <textarea name="content" cols="100" rows="10" class="form-control" placeholder="Markdown Content" required>{{ page }}</textarea>
+            </div>
+            <div class="offset-md-7">
+                <input type="submit" class="btn btn-primary" value="Save Entry">
+            </div>
+        </form>
+
+    {% else %}
+
+    <h1>Create New Wiki Entry</h1>
+
+    <!--This form is for creating a new entry. It's action url is differnt from above-->
+    <form action="{% url 'wiki:create' %}" method="post">
+            {% csrf_token %}
+            <div class="m-2 form-group col-5">
+                <input type="text" name="title" class="form-control" placeholder="Title" required>
+            </div>
+            <div class="m-2 form-group col-8">
+                <textarea name="content" cols="100" rows="10" class="form-control" placeholder="Markdown Content" required></textarea>
+            </div>
+            <div class="offset-md-7">
+                <input type="submit" class="btn btn-primary" value="Save Entry">
+            </div>
+        </form>
+
+    {% endif %}
+
+{% endblock body %}
+
+
+
+

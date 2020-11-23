@@ -1,0 +1,26 @@
+{% extends "encyclopedia/layout.html" %}
+
+
+{% block title %}Error{% endblock %}
+
+{% block body %}
+
+    <h1>Sorry</h1>
+
+    {% if not message %}
+
+        Entry was not found. Try checking:
+        <ul>
+            <li>Spelling</li>
+            <li>Capitalization</li>
+        </ul>
+
+    {% else %}
+
+        <h3>{{ message }}</h3>
+
+    {% endif %}
+
+{% endblock body %}
+
+
