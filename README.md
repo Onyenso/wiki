@@ -6,8 +6,7 @@ The homepage displays all avalaible topics alphabetically. Initially, these are 
 [Create New Page](/encyclopedia/templates/encyclopedia/create.html) on the sidebar. This takes to a page that has a form that accepts Markdown content. After submission,
 the topic is added to the list of topics in the encyclopedia.
 
-[views.py](/encyclopedia/views.py) defines the functions for all of the routes. The folder, [templates](/encyclopedia/templates/encyclopedia) holds the front-end HTML
-files. [entries](/entries) folder is where the Markdown contents of topics are saved when they are submitted. The project uses no databases and aesthetics are not most
-important.
+[views.py](/encyclopedia/views.py) defines the functions for all of the routes. The folder, [templates](/encyclopedia/templates/encyclopedia), holds the front-end HTML
+files. [entries](/entries) folder is where the Markdown contents of topics are saved when they are submitted. This project uses no databases and aesthetics were **not** most paramount.
 
 A video of this application's demonstration is at https://youtu.be/IJzDRupPgHA
